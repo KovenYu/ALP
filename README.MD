@@ -22,9 +22,9 @@ We provide one example of the dataset in `data/eval`, and others can be found [h
 Our joint lighting-pose estimation uses the codebase from [NvDiffRecMC](https://github.com/NVlabs/nvdiffrecmc) repository.
 We follow their environment setup (we used [`mamba`](https://mamba.readthedocs.io/en/latest/installation.html) which is faster than `conda`):
 ```bash
-conda create -n alp python=3.9
-codna activate alp
-conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.6 -c pytorch -c conda-forge
+mamba create -n alp python=3.9
+mamba activate alp
+mamba install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.6 -c pytorch -c conda-forge
 pip install ninja imageio PyOpenGL glfw xatlas gdown scipy lpips opencv-python
 pip install git+https://github.com/NVlabs/nvdiffrast/
 pip install --global-option="--no-networks" git+https://github.com/NVlabs/tiny-cuda-nn#subdirectory=bindings/torch
@@ -32,7 +32,7 @@ pip install --global-option="--no-networks" git+https://github.com/NVlabs/tiny-c
 In addition, we use the [skylib](https://github.com/soravux/skylibs) packages:
 ```bash
 pip install --upgrade skylibs
-conda install -c conda-forge openexr-python openexr
+mamba install -c conda-forge openexr-python openexr
 ```
 
 
