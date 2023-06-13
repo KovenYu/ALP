@@ -20,7 +20,7 @@ We provide one example of the dataset in `data/eval`, and others can be found [h
 
 ## Environment
 Our joint lighting-pose estimation uses the codebase from [NvDiffRecMC](https://github.com/NVlabs/nvdiffrecmc) repository.
-We follow their environment setup:
+We follow their environment setup (we used [`mamba`](https://mamba.readthedocs.io/en/latest/installation.html) which is faster than `conda`):
 ```bash
 conda create -n alp python=3.9
 codna activate alp
