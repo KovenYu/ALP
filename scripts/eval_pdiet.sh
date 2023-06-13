@@ -5,13 +5,13 @@ ROOT_PATH='/viscam/projects/alp/code_release'
 ENV_NAME='alp'
 
 MESH_NAME="221106_pdiet"
-MESH_PATH='/viscam/projects/alp/2022_ALP/nvdiffrec/out/'${MESH_NAME}'/mesh/mesh.obj'
-INPUT_DIR='/viscam/projects/alp/2022_ALP/pre_exp/AlignHDRToolkit/testset'
+MESH_PATH=${ROOT_PATH}'/data/alp_models/'${MESH_NAME}'/mesh.obj'
+INPUT_DIR=${ROOT_PATH}'/data/eval'
 SCENE_LIST=("indoor_04")
 MODEL_NAME="pdiet"
-OUTPUT_PATH="eval_results"
+OUTPUT_PATH=${ROOT_PATH}"/eval_results"
 
-N_ROT=4
+N_ROT=1
 TRAIN_RES=2048
 
 timestamp=$(date +%s)
@@ -21,12 +21,11 @@ for scene in ${SCENE_LIST[@]}; do
 
     source ${CONDA_PATH}
     conda activate ${ENV_NAME}
-    which python
-    cd ${ROOT_PATH}
+    cd ${ROOT_PATH}/third_party/nvdiffrecmc
 
     echo 'processing '${INPUT_DIR}/${scene}/${MODEL_NAME}
 
-    python run_sample.py --input_dir ${INPUT_DIR}/${scene}/${MODEL_NAME} --mesh_path ${MESH_PATH} --n_rot ${N_ROT} \
+    python ${ROOT_PATH}/run_sample.py --input_dir ${INPUT_DIR}/${scene}/${MODEL_NAME} --mesh_path ${MESH_PATH} --n_rot ${N_ROT} \
         --train_res ${TRAIN_RES} --output_dir ${SAVE_DIR}/${scene}/'best_pose'
 
     SCENE_PATH=${INPUT_DIR}/${scene}/${MODEL_NAME}
