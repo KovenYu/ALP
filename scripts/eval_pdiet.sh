@@ -11,7 +11,7 @@ SCENE_LIST=("indoor_04")
 MODEL_NAME="pdiet"
 OUTPUT_PATH=${ROOT_PATH}"/eval_results"
 
-N_ROT=1
+N_ROT=4
 TRAIN_RES=2048
 
 timestamp=$(date +%s)
@@ -32,6 +32,7 @@ for scene in ${SCENE_LIST[@]}; do
     OUTPUT_PATH=${SAVE_DIR}/${scene}/'best_pose'
     cp ${SCENE_PATH}'/hdr_rgba.exr' ${OUTPUT_PATH}'/hdr.exr'
 
+    cd ${ROOT_PATH}
     python optimize_envmap.py \
     --input_dir $OUTPUT_PATH --batch_size 2000000 --n_samples 1 --repr_emap_in_cam --patience 200 --n_iters 10000
 

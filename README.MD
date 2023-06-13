@@ -19,7 +19,7 @@ we collect an HDR image dataset with groundtruth environment maps and object mas
 We provide one example of the dataset in `data/eval`, and others can be found [here]().
 
 ## Environment
-Our joint lighting-pose estimation code is based on the [NvDiffRecMC]() repository.
+Our joint lighting-pose estimation uses the codebase from [NvDiffRecMC](https://github.com/NVlabs/nvdiffrecmc) repository.
 We follow their environment setup:
 ```bash
 conda create -n alp python=3.9
