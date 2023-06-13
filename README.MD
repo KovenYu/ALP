@@ -16,7 +16,7 @@ and single-image lighting estimation in this repository.
 We provide one example of reconstructed ALP model in `data/alp_models`, and others can be found [here](https://drive.google.com/drive/folders/1yPWJMU_b4iAawTGgcWASb8ODWDV7ppb8?usp=sharing). 
 To evaluate single-image lighting estimation with ALPs, 
 we collect an HDR image dataset with groundtruth environment maps and object masks.
-We provide one example of the dataset in `data/eval`, and others can be found [here]().
+We provide one example of the dataset in `data/eval`, and others can be found [here](https://drive.google.com/drive/folders/1yPWJMU_b4iAawTGgcWASb8ODWDV7ppb8?usp=sharing).
 
 ## Environment
 Our joint lighting-pose estimation uses the codebase from [NvDiffRecMC](https://github.com/NVlabs/nvdiffrecmc) repository.
